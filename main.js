@@ -14,7 +14,19 @@ function celsiusToFahr(temperature){
     return fahr
 };
 
-const greettingText = "Good Afternoon!" ;
+let currentHour = new Date().getHours();
+let greettingText;
+
+if (currentHour < 12){
+   greettingText = "Good Morning!"
+} else if (currentHour < 19){
+   greettingText = "Good Afternoon!"
+} else if (currentHour < 24){
+   greettingText = "Good Evening!"
+} else {
+   greettingText = "Welcome!"
+}
+
 const weatherCondition = "sunny";
 const userLocation = "Salvador";
 let temperature = "33";
@@ -98,7 +110,7 @@ galleryImages.forEach(function(image, index){
       });
 
       e.target.dataset.selected = true
-      
+
    });
 
    thumbnails.appendChild(thumb);
